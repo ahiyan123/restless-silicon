@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 echo "[*] Cloning Buildroot Environment..."
-git clone git://git.buildroot.net/buildroot --depth=1
+git clone https://github.com/buildroot/buildroot.git --depth=1
 cd buildroot
 
 # Copy Pioneer logic into the Buildroot tree
