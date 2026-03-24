@@ -1,0 +1,33 @@
+# Target Architecture: Milk-V Duo S (SG2000 RISC-V)
+BR2_riscv=y
+BR2_riscv_64=y
+BR2_TOOLCHAIN_BUILDROOT_MUSL=y
+
+# System Branding & Core Values
+BR2_TARGET_GENERIC_HOSTNAME="pioneer-node"
+BR2_TARGET_GENERIC_ISSUE="Pioneer doesn't know to rest. Everyone isn't same."
+
+# Kernel & Hardware Configuration
+BR2_LINUX_KERNEL=y
+BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
+BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="https://github.com/milkv-duo/duo-buildroot-sdk/archive/refs/heads/develop.tar.gz"
+BR2_LINUX_KERNEL_DEFCONFIG="cvitek_cv181x_defconfig"
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/milkv-duos/linux.config"
+
+# Feature Set: Office, AI, Search, and Mail
+BR2_PACKAGE_XORG7=y
+BR2_PACKAGE_XSERVER_XORG_SERVER=y
+BR2_PACKAGE_ABIWORD=y
+BR2_PACKAGE_GNUMERIC=y
+BR2_PACKAGE_SENT=y
+BR2_PACKAGE_MDP=y
+BR2_PACKAGE_LLAMA_CPP=y
+BR2_PACKAGE_NEOMUTT=y
+BR2_PACKAGE_RCLONE=y
+BR2_PACKAGE_PYTHON3=y
+BR2_PACKAGE_PYTHON_BEAUTIFULSOUP4=y
+BR2_PACKAGE_JQ=y
+BR2_PACKAGE_ZRAM_TOOLS=y
+
+# Integration Layer
+BR2_ROOTFS_OVERLAY="board/milkv-duos/rootfs_overlay"
