@@ -1,0 +1,18 @@
+#!/bin/sh
+case "$1" in
+  start)
+    # Clear screen and show values on the 3.1" display
+    clear > /dev/tty1
+    echo "------------------------------------------" > /dev/tty1
+    echo "  SOVEREIGN NODE OS - PIONEER EDITION" > /dev/tty1
+    echo "  Motto: Pioneer doesn't know to rest." > /dev/tty1
+    echo "  Everyone isn't same." > /dev/tty1
+    echo "------------------------------------------" > /dev/tty1
+    
+    # Initialize ZRAM for 512MB RAM safety
+    zramswap start
+    
+    # Optional: Auto-sync Disroot via rclone
+    # rclone sync disroot:remote /data/vault &
+    ;;
+esac
